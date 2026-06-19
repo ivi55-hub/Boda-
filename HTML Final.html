@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boda de Ivana & Daniel - Lista de Invitados</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@0.354.0/dist/umd/lucide.min.js"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        romantic: ['"Great Vibes"', 'cursive'],
+                        sans: ['Quicksand', 'sans-serif'],
+                    },
+                    colors: {
+                        boda: {
+                            50: '#F4FBF9',   // Crema menta suave
+                            100: '#D2F1EC',  // Espuma de mar pastel
+                            200: '#A6E4DC',  // Turquesa Tiffany suave
+                            300: '#68CCD5',  // Turquesa caribeño
+                            400: '#F8D16C',  // Sol de tarde / Oro
+                            500: '#E4A134',  // Arena cálida
+                            600: '#1A6E76',  // Azul bahía principal
+                            700: '#124F55',  // Azul bahía profundo
+                            dark: '#0E3438'  // Azul de las profundidades
+                        },
+                        oro: {
+                            DEFAULT: '#F1C40F', // Oro veraniego
+                            light: '#FCE25F',   // Oro claro
+                            dark: '#D4AC0D'     // Bronce
+                        },
+                        prioridad: {
+                            esencialBg: '#FFFDF0',      // Crema lirio
+                            esencialBorder: '#F8D16C',  // Oro de limón
+                            esencialText: '#996A0C'     // Bronce tostado
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            background-color: #F4FBF9;
+            background-image: 
+                radial-gradient(#A6E4DC 1px, transparent 1px), 
+                radial-gradient(#A6E4DC 1px, #F4FBF9 1px);
+            background-size: 48px 48px;
+            background-position: 0 0, 24px 24px;
+        }
+        @media print {
+            body {
+                background-image: none !important;
+                background-color: white !important;
+            }
+            .no-print {
+                display: none !important;
+            }
+            .print-full-width {
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+            select {
+                appearance: none;
+                border: none !important;
+                background: transparent !important;
+                padding: 0 !important;
+            }
+        }
+        .animate-sparkle {
+            animation: pulse-sparkle 3s infinite ease-in-out;
+        }
+        @keyframes pulse-sparkle {
+            0%, 100% { opacity: 0.3; transform: scale(0.9); }
+            50% { opacity: 1; transform: scale(1.1); }
+        }
+    </style>
+</head>
+<body class="font-sans text-boda-dark antialiased min-h-screen pb-12 relative">
+
+    <header class="relative bg-white/95 backdrop-blur-md border-b-4 border-boda-100 py-12 px-4 text-center overflow-hidden shadow-md">
+        <div class="absolute inset-0 flex items-center justify-center opacity-25 md:opacity-35 pointer-events-none z-0 no-print transform scale-125 transition-transform duration-700">
+            <svg width="280" height="280" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="filter drop-shadow-[0_8px_16px_rgba(228,161,52,0.25)]">
+                <defs>
+                    <linearGradient id="oroReluciente" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#FFF5C3"/>
+                        <stop offset="30%" stop-color="#F1C40F"/>
+                        <stop offset="50%" stop-color="#D4AC0D"/>
+                        <stop offset="75%" stop-color="#F8D16C"/>
+                        <stop offset="100%" stop-color="#E4A134"/>
+                    </linearGradient>
+                    <linearGradient id="oroCalido" x1="100%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="#FFF2D4"/>
+                        <stop offset="40%" stop-color="#F1C40F"/>
+                        <stop offset="70%" stop-color="#E4A134"/>
+                        <stop offset="100%" stop-color="#B87B14"/>
+                    </linearGradient>
+                </defs>
+                <circle cx="38" cy="50" r="21" stroke="url(#oroReluciente)" stroke-width="5"/>
+                <circle cx="62" cy="50" r="21" stroke="url(#oroCalido)" stroke-width="5"/>
+            </svg>
+        </div>
+
+        <div class="max-w-2xl mx-auto relative z-10">
+            <span class="inline-flex items-center gap-2 bg-boda-100/90 text-boda-700 font-bold px-4 py-2 rounded-full text-xs uppercase tracking-widest border border-boda-200 backdrop-blur-xs">
+                <i data-lucide="sparkles" class="w-3.5 h-3.5 text-boda-600 animate-spin" style="animation-duration: 6s;"></i> 
+                ¡Nos Casamos! 
+            </span>
+            <h1 class="font-romantic text-6xl md:text-8xl text-boda-700 mt-4 mb-2">Ivana & Daniel</h1>
+            <p class="text-boda-600 font-semibold tracking-wide flex items-center justify-center gap-2 text-sm md:text-base">
+                <i data-lucide="heart" class="w-4 h-4 text-boda-300 fill-boda-200 animate-pulse"></i>
+                Nuestra Lista de Invitados
+                <i data-lucide="heart" class="w-4 h-4 text-boda-300 fill-boda-200 animate-pulse"></i>
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 mt-8 grid grid-cols-1 lg:grid-cols-4 gap-8 relative z-10">
+        
+        <section class="lg:col-span-1 space-y-6 no-print">
+            <div class="bg-white rounded-3xl p-6 border-2 border-boda-200 shadow-sm relative overflow-hidden">
+                <h3 class="text-lg font-bold text-boda-dark mb-4 flex items-center gap-2 border-b border-boda-100 pb-2">
+                    <i data-lucide="bookmark-check" class="text-boda-600"></i> Resumen de Invitados
+                </h3>
+                
+                <div class="space-y-4 relative z-10">
+                    <div>
+                        <div class="flex justify-between text-sm mb-1">
+                            <span class="font-semibold text-gray-600">Invitados Totales</span>
+                            <span class="font-bold text-boda-dark" id="stat-total">0</span>
+                        </div>
+                        <div class="w-full bg-boda-50 rounded-full h-2.5 border border-boda-100">
+                            <div class="bg-boda-600 h-2 rounded-full" id="bar-total" style="width: 100%"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between text-sm mb-1">
+                            <span class="font-semibold text-emerald-600 flex items-center gap-1">
+                                <i data-lucide="check-circle" class="w-3.5 h-3.5"></i> Confirmados
+                            </span>
+                            <span class="font-bold text-emerald-600" id="stat-confirmed">0</span>
+                        </div>
+                        <div class="w-full bg-boda-50 rounded-full h-2.5 border border-boda-100">
+                            <div class="bg-emerald-500 h-2 rounded-full transition-all duration-500" id="bar-confirmed" style="width: 0%"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between text-sm mb-1">
+                            <span class="font-semibold text-amber-600 flex items-center gap-1">
+                                <i data-lucide="help-circle" class="w-3.5 h-3.5"></i> Pendientes
+                            </span>
+                            <span class="font-bold text-amber-600" id="stat-pending">0</span>
+                        </div>
+                        <div class="w-full bg-boda-50 rounded-full h-2.5 border border-boda-100">
+                            <div class="bg-amber-400 h-2 rounded-full transition-all duration-500" id="bar-pending" style="width: 0%"></div>
+                        </div>
+                    </div>
+
+                    <div class="pt-3 border-t border-dashed border-boda-200 grid grid-cols-2 gap-2 text-center text-xs">
+                        <div class="bg-prioridad-esencialBg p-2 rounded-xl border border-prioridad-esencialBorder">
+                            <p class="text-prioridad-esencialText font-bold">⭐ Esenciales</p>
+                            <p class="text-lg font-bold text-prioridad-esencialText mt-0.5" id="stat-essential">0</p>
+                        </div>
+                        <div class="bg-boda-50 p-2 rounded-xl border border-boda-200">
+                            <p class="text-boda-600 font-bold">🔄 Opcionales</p>
+                            <p class="text-lg font-bold text-boda-700 mt-0.5" id="stat-optional">0</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-2 text-center text-xs">
+                        <div class="bg-boda-50 p-2 rounded-xl border border-boda-200">
+                            <p class="text-gray-500 font-semibold">Adultos 🧑</p>
+                            <p class="text-lg font-bold text-boda-dark" id="stat-adults">0</p>
+                        </div>
+                        <div class="bg-boda-50 p-2 rounded-xl border border-boda-200">
+                            <p class="text-gray-500 font-semibold">Niños 👶</p>
+                            <p class="text-lg font-bold text-boda-dark" id="stat-kids">0</p>
+                        </div>
+                    </div>
+
+                    <div class="pt-3 border-t border-dashed border-boda-200 grid grid-cols-2 gap-2 text-center text-xs">
+                        <div class="bg-emerald-50/60 p-2 rounded-xl border border-emerald-100">
+                            <p class="text-emerald-700 font-bold">🌿 Lado Ivana</p>
+                            <p class="text-lg font-bold text-emerald-800 mt-0.5" id="stat-side-ivana">0</p>
+                        </div>
+                        <div class="bg-amber-50/60 p-2 rounded-xl border border-amber-100">
+                            <p class="text-amber-700 font-bold">🌊 Lado Daniel</p>
+                            <p class="text-lg font-bold text-amber-800 mt-0.5" id="stat-side-daniel">0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-3xl p-6 border-2 border-boda-200 shadow-sm">
+                <h3 class="text-lg font-bold text-boda-dark mb-3 flex items-center gap-2 border-b border-boda-100 pb-2">
+                    <i data-lucide="flower2" class="text-boda-600"></i> Distribución de Mesas
+                </h3>
+                
+                <div class="mb-4 pb-4 border-b border-boda-100">
+                    <label class="block text-[10px] font-bold text-boda-600 mb-1.5 uppercase tracking-wider">Crear Nueva Mesa</label>
+                    <div class="flex gap-2">
+                        <input type="text" id="new-table-input" placeholder="Ej. Mesa Orquídeas" class="flex-1 px-3 py-1.5 rounded-xl border-2 border-boda-100 focus:border-boda-300 focus:outline-none text-xs font-semibold">
+                        <button onclick="addNewTable()" class="bg-boda-600 hover:bg-boda-700 text-white px-3 py-1.5 rounded-xl font-bold text-xs transition-colors cursor-pointer">Crear</button>
+                    </div>
+                </div>
+
+                <p class="text-xs text-gray-500 mb-3 font-semibold">Haz clic en una mesa para filtrar. Solo puedes borrar mesas vacías.</p>
+                <div id="tables-dashboard-container" class="space-y-3 max-h-80 overflow-y-auto pr-1"></div>
+            </div>
+
+            <div class="bg-white rounded-3xl p-4 border-2 border-boda-200 space-y-2 shadow-sm">
+                <button onclick="window.print()" class="w-full flex items-center justify-center gap-2 bg-boda-600 hover:bg-boda-700 text-white py-2.5 px-4 rounded-xl font-bold text-sm cursor-pointer shadow-xs">
+                    <i data-lucide="printer" class="w-4 h-4"></i> Imprimir / Exportar PDF
+                </button>
+                <button onclick="clearAllGuests()" class="w-full flex items-center justify-center gap-2 border border-red-200 text-red-600 hover:bg-red-50 py-2.5 px-4 rounded-xl font-semibold text-sm cursor-pointer">
+                    <i data-lucide="trash-2" class="w-4 h-4"></i> Borrar Todo el Listado
+                </button>
+            </div>
+        </section>
+
+        <section class="lg:col-span-3 space-y-6 print-full-width">
+            
+            <div class="bg-white rounded-3xl p-6 border-2 border-boda-200 shadow-sm no-print">
+                <h3 class="text-lg font-bold text-boda-dark mb-4 flex items-center gap-2 border-b border-boda-100 pb-2">
+                    <i data-lucide="user-plus" class="text-boda-600"></i> Sumar Invitado al Festejo
+                </h3>
+                
+                <form id="add-guest-form" onsubmit="handleFormSubmit(event)" class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div class="md:col-span-2">
+                        <label class="block text-xs font-bold text-boda-dark mb-1 uppercase tracking-wider">Nombre del Invitado</label>
+                        <input type="text" id="guest-name" required placeholder="Ej. Tía Clotilde..." class="w-full px-4 py-2.5 rounded-xl border-2 border-boda-100 focus:border-boda-300 focus:outline-none text-sm font-medium">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-boda-dark mb-1 uppercase tracking-wider">¿Lado de Quién?</label>
+                        <select id="guest-side" class="w-full px-4 py-2.5 rounded-xl border-2 border-boda-100 text-sm font-medium focus:outline-none">
+                            <option value="Ivana">Ivana 🌿</option>
+                            <option value="Daniel">Daniel 🌊</option>
+                            <option value="Mutuo">Amigos Mutuos 🥂</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-boda-dark mb-1 uppercase tracking-wider">Prioridad</label>
+                        <select id="guest-priority" class="w-full px-4 py-2.5 rounded-xl border-2 border-boda-100 text-sm font-bold focus:outline-none">
+                            <option value="Imprescindible">⭐ Imprescindible</option>
+                            <option value="Opcional">🔄 Opcional</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-boda-dark mb-1 uppercase tracking-wider">Grupo de Edad</label>
+                        <select id="guest-type" class="w-full px-4 py-2.5 rounded-xl border-2 border-boda-100 text-sm font-medium focus:outline-none">
+                            <option value="Adulto">Adulto 🧑</option>
+                            <option value="Niño">Niño 👶</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-boda-dark mb-1 uppercase tracking-wider">Asistencia</label>
+                        <select id="guest-status" class="w-full px-4 py-2.5 rounded-xl border-2 border-boda-100 text-sm font-medium focus:outline-none">
+                            <option value="Pendiente">Pendiente ⏳</option>
+                            <option value="Confirmado">Confirmado ✔️</option>
+                            <option value="Cancelado">Cancelado ❌</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-boda-dark mb-1 uppercase tracking-wider">Mesa / Grupo</label>
+                        <select id="guest-table" class="w-full px-4 py-2.5 rounded-xl border-2 border-boda-100 text-sm font-medium focus:outline-none"></select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-boda-dark mb-1 uppercase tracking-wider">Menú Especial / Alergia</label>
+                        <input type="text" id="guest-diet" placeholder="Ej. Vegano, Sin gluten..." class="w-full px-4 py-2.5 rounded-xl border-2 border-boda-100 text-sm font-medium focus:outline-none">
+                    </div>
+                    <div class="flex items-end">
+                        <button type="submit" class="w-full bg-boda-600 hover:bg-boda-700 text-white font-bold py-2.5 rounded-xl shadow-xs transition-colors flex items-center justify-center gap-2 text-sm cursor-pointer">
+                            <i data-lucide="plus-circle" class="w-4 h-4"></i> Añadir
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="bg-white rounded-3xl p-4 border-2 border-boda-200 flex flex-wrap items-center justify-between gap-4 no-print shadow-sm">
+                <div class="relative w-full md:w-72">
+                    <input type="text" id="search-input" onkeyup="renderTable()" placeholder="Buscar invitado, dieta o mesa..." class="w-full pl-10 pr-10 py-2.5 rounded-xl border-2 border-boda-100 focus:border-boda-300 focus:outline-none text-sm font-medium">
+                    <div class="absolute left-3 top-3 text-boda-400"><i data-lucide="search" class="w-4 h-4"></i></div>
+                    <button id="clear-search-btn" onclick="clearSearch()" class="absolute right-3 top-3 text-gray-400 hover:text-gray-600 hidden"><i data-lucide="x" class="w-4 h-4"></i></button>
+                </div>
+
+                <div class="flex items-center gap-1.5 flex-wrap text-sm font-semibold">
+                    <button id="filter-all-btn" onclick="setActiveFilter('all')" class="filter-btn bg-boda-600 text-white px-4 py-2 rounded-xl text-xs transition-all cursor-pointer shadow-xs">Todos</button>
+                    <button id="filter-Imprescindible-btn" onclick="setActiveFilter('Imprescindible')" class="filter-btn border-2 border-boda-100 text-boda-dark px-4 py-2 rounded-xl text-xs hover:bg-boda-50 transition-colors cursor-pointer">⭐ Imprescindibles</button>
+                    <button id="filter-Opcional-btn" onclick="setActiveFilter('Opcional')" class="filter-btn border-2 border-boda-100 text-boda-dark px-4 py-2 rounded-xl text-xs hover:bg-boda-50 transition-colors cursor-pointer">🔄 Opcionales</button>
+                    <button id="filter-Ivana-btn" onclick="setActiveFilter('Ivana')" class="filter-btn border-2 border-boda-100 text-boda-dark px-4 py-2 rounded-xl text-xs hover:bg-boda-50 transition-colors cursor-pointer">🌸 Lado Ivana</button>
+                    <button id="filter-Daniel-btn" onclick="setActiveFilter('Daniel')" class="filter-btn border-2 border-boda-100 text-boda-dark px-4 py-2 rounded-xl text-xs hover:bg-boda-50 transition-colors cursor-pointer">👔 Lado Daniel</button>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-3xl border-2 border-boda-200 overflow-hidden shadow-sm">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-boda-100 text-boda-dark font-bold text-xs uppercase tracking-wider border-b-2 border-boda-200">
+                                <th class="py-4 px-6">Invitado</th>
+                                <th class="py-4 px-4 text-center">Prioridad</th>
+                                <th class="py-4 px-4 text-center">Lado</th>
+                                <th class="py-4 px-4 text-center">Edad</th>
+                                <th class="py-4 px-4">Mesa / Grupo</th>
+                                <th class="py-4 px-4">Menú Especial</th>
+                                <th class="py-4 px-4 text-center">Asistencia</th>
+                                <th class="py-4 px-6 text-center no-print" style="width: 120px;">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="guest-table-body" class="divide-y divide-boda-100 text-sm font-medium"></tbody>
+                    </table>
+                </div>
+                
+                <div id="empty-state" class="hidden py-16 text-center">
+                    <div class="text-boda-300 mb-4 flex justify-center"><i data-lucide="frown" class="w-16 h-16 stroke-[1.5]"></i></div>
+                    <h4 class="text-lg font-bold text-boda-dark mb-1">El listado está vacío o no hay coincidencias</h4>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="custom-modal" class="fixed inset-0 bg-boda-dark/60 backdrop-blur-xs flex items-center justify-center z-[9999] hidden no-print">
+        <div class="bg-white rounded-3xl p-6 border-2 border-boda-200 shadow-xl max-w-sm w-full mx-4 transform transition-all">
+            <div class="flex items-center gap-3 mb-4">
+                <div id="modal-icon-container" class="w-10 h-10 rounded-full flex items-center justify-center text-boda-600 bg-boda-50"></div>
+                <h4 id="modal-title" class="font-bold text-lg text-boda-dark">Confirmación</h4>
+            </div>
+            <p id="modal-message" class="text-sm font-medium text-gray-600 mb-6 leading-relaxed"></p>
+            <div class="flex gap-3 justify-end">
+                <button id="modal-cancel-btn" class="px-4 py-2 rounded-xl text-xs font-bold border-2 border-boda-100 text-gray-500 hover:bg-gray-100 transition-colors cursor-pointer">Cancelar</button>
+                <button id="modal-confirm-btn" class="px-4 py-2 rounded-xl text-xs font-bold bg-boda-600 hover:bg-boda-700 text-white shadow-xs transition-colors cursor-pointer">Confirmar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed bottom-0 left-0 pointer-events-none opacity-20 md:opacity-30 z-0 no-print max-w-[150px] md:max-w-[220px]">
+        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto origin-bottom-left">
+            <path d="M0,100 Q30,60 20,20 Q40,50 50,100" fill="#A6E4DC" />
+            <path d="M0,100 Q15,40 35,30 Q25,65 50,100" fill="#68CCD5" />
+            <path d="M0,100 Q45,70 65,45 Q40,80 50,100" fill="#1A6E76" />
+            <circle cx="23" cy="30" r="1.5" fill="#F8D16C" />
+            <circle cx="33" cy="40" r="1.5" fill="#F8D16C" />
+        </svg>
+    </div>
+
+    <div class="fixed bottom-0 right-0 pointer-events-none opacity-20 md:opacity-30 z-0 no-print max-w-[150px] md:max-w-[220px]">
+        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto origin-bottom-right transform scale-x-[-1]">
+            <path d="M0,100 Q30,60 20,20 Q40,50 50,100" fill="#A6E4DC" />
+            <path d="M0,100 Q15,40 35,30 Q25,65 50,100" fill="#68CCD5" />
+            <path d="M0,100 Q45,70 65,45 Q40,80 50,100" fill="#1A6E76" />
+            <circle cx="23" cy="30" r="1.5" fill="#F8D16C" />
+            <circle cx="33" cy="40" r="1.5" fill="#F8D16C" />
+        </svg>
+    </div>
+
+    <script>
+        const defaultGuests = [
+            { id: 1, name: "Mamá de Ivana", priority: "Imprescindible", side: "Ivana", type: "Adulto", table: "Mesa Lirios Blancos", diet: "Sin Mariscos", status: "Confirmado" },
+            { id: 2, name: "Papá de Daniel", priority: "Imprescindible", side: "Daniel", type: "Adulto", table: "Mesa Anillos Oro", diet: "Normal", status: "Confirmado" },
+            { id: 3, name: "Tía Clotilde", priority: "Imprescindible", side: "Ivana", type: "Adulto", table: "Mesa Atardecer", diet: "Vegetariano", status: "Pendiente" },
+            { id: 4, name: "Amigo de Daniel", priority: "Opcional", side: "Daniel", type: "Adulto", table: "Mesa Brisa", diet: "Sin Lactosa", status: "Confirmado" }
+        ];
+
+        const defaultTables = ["Mesa Lirios Blancos", "Mesa Anillos Oro", "Mesa Atardecer", "Mesa Brisa", "Sin Asignar"];
+
+        let guests = [];
+        let tables = [];
+        let currentFilter = 'all';
+        let modalCallback = null;
+        let editingGuestId = null;
+
+        window.onload = function() {
+            init();
+        };
+
+        function init() {
+            const storedTables = localStorage.getItem('wedding_tables_ivana_daniel');
+            tables = storedTables ? JSON.parse(storedTables) : defaultTables;
+            if(!storedTables) localStorage.setItem('wedding_tables_ivana_daniel', JSON.stringify(tables));
+
+            const storedGuests = localStorage.getItem('wedding_guests_ivana_daniel');
+            guests = storedGuests ? JSON.parse(storedGuests) : defaultGuests;
+            if(!storedGuests) saveGuests();
+
+            populateFormTableSelect();
+            renderTable();
+            updateStats();
+            renderTablesDashboard();
+        }
+
+        function saveGuests() {
+            localStorage.setItem('wedding_guests_ivana_daniel', JSON.stringify(guests));
+            updateStats();
+            renderTablesDashboard();
+        }
+
+        function showCustomConfirm(title, message, iconName, onConfirm) {
+            const modal = document.getElementById('custom-modal');
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-message').innerText = message;
+            
+            const iconContainer = document.getElementById('modal-icon-container');
+            iconContainer.innerHTML = '';
+            const iconEl = document.createElement('i');
+            iconEl.setAttribute('data-lucide', iconName || 'info');
+            iconEl.className = "w-5 h-5";
+            iconContainer.appendChild(iconEl);
+            
+            modal.classList.remove('hidden');
+            modalCallback = onConfirm;
+            if (typeof lucide !== 'undefined') lucide.createIcons();
+        }
+
+        document.getElementById('modal-cancel-btn').addEventListener('click', () => {
+            document.getElementById('custom-modal').classList.add('hidden');
+            modalCallback = null;
+        });
+
+        document.getElementById('modal-confirm-btn').addEventListener('click', () => {
+            document.getElementById('custom-modal').classList.add('hidden');
+            if (modalCallback) modalCallback();
+            modalCallback = null;
+        });
+
+        function populateFormTableSelect() {
+            const select = document.getElementById('guest-table');
+            select.innerHTML = '';
+            tables.forEach(table => {
+                const opt = document.createElement('option');
+                opt.value = table;
+                opt.innerText = table;
+                select.appendChild(opt);
+            });
+        }
+
+        function renderTable() {
+            const tableBody = document.getElementById('guest-table-body');
+            const emptyState = document.getElementById('empty-state');
+            const searchQuery = document.getElementById('search-input').value.toLowerCase();
+            
+            document.getElementById('clear-search-btn').classList.toggle('hidden', !searchQuery);
+            tableBody.innerHTML = '';
+            
+            const filtered = guests.filter(guest => {
+                let matchesFilter = true;
+                if (currentFilter === 'Ivana' || currentFilter === 'Daniel') {
+                    matchesFilter = guest.side === currentFilter;
+                } else if (currentFilter === 'Imprescindible' || currentFilter === 'Opcional') {
+                    matchesFilter = guest.priority === currentFilter;
+                } else if (currentFilter.startsWith('table:')) {
+                    matchesFilter = guest.table === currentFilter.replace('table:', '');
+                }
+                return matchesFilter && (guest.name.toLowerCase().includes(searchQuery) || guest.table.toLowerCase().includes(searchQuery) || guest.diet.toLowerCase().includes(searchQuery));
+            });
+
+            if (filtered.length === 0) {
+                emptyState.classList.remove('hidden');
+            } else {
+                emptyState.classList.add('hidden');
+                filtered.forEach(guest => {
+                    const tr = document.createElement('tr');
+                    tr.className = "hover:bg-boda-50/50 transition-colors";
+                    
+                    const isEditing = editingGuestId === guest.id;
+
+                    const nameCell = isEditing 
+                        ? `<input type="text" id="edit-name-${guest.id}" value="${guest.name}" class="px-2 py-1 rounded-lg border-2 border-boda-300 font-bold focus:outline-none bg-white w-full">`
+                        : guest.name;
+
+                    const dietCell = isEditing
+                        ? `<input type="text" id="edit-diet-${guest.id}" value="${guest.diet}" class="px-2 py-1 rounded-lg border-2 border-boda-300 font-medium focus:outline-none bg-white w-full text-xs">`
+                        : guest.diet;
+
+                    const prioritySelect = `
+                        <select onchange="updateGuestField(${guest.id}, 'priority', this.value)" class="px-1 py-1 rounded-lg border text-xs font-bold focus:outline-none bg-white max-w-[120px]">
+                            <option value="Imprescindible" ${guest.priority === 'Imprescindible' ? 'selected' : ''}>⭐ Esencial</option>
+                            <option value="Opcional" ${guest.priority === 'Opcional' ? 'selected' : ''}>🔄 Opcional</option>
+                        </select>
+                    `;
+
+                    const sideSelect = `
+                        <select onchange="updateGuestField(${guest.id}, 'side', this.value)" class="px-1 py-1 rounded-lg border text-xs font-medium focus:outline-none bg-white">
+                            <option value="Ivana" ${guest.side === 'Ivana' ? 'selected' : ''}>🌿 Ivana</option>
+                            <option value="Daniel" ${guest.side === 'Daniel' ? 'selected' : ''}>🌊 Daniel</option>
+                            <option value="Mutuo" ${guest.side === 'Mutuo' ? 'selected' : ''}>🥂 Mutuo</option>
+                        </select>
+                    `;
+
+                    const typeSelect = `
+                        <select onchange="updateGuestField(${guest.id}, 'type', this.value)" class="px-1 py-1 rounded-lg border text-xs focus:outline-none bg-white">
+                            <option value="Adulto" ${guest.type === 'Adulto' ? 'selected' : ''}>🧑 Adulto</option>
+                            <option value="Niño" ${guest.type === 'Niño' ? 'selected' : ''}>👶 Niño</option>
+                        </select>
+                    `;
+
+                    let tableOptions = tables.map(t => `<option value="${t}" ${guest.table === t ? 'selected' : ''}>${t}</option>`).join('');
+                    const tableSelect = `
+                        <select onchange="updateGuestField(${guest.id}, 'table', this.value)" class="px-1 py-1 rounded-lg border text-xs italic font-medium text-boda-600 focus:outline-none bg-white max-w-[150px]">
+                            ${tableOptions}
+                        </select>
+                    `;
+
+                    const statusSelect = `
+                        <select onchange="updateGuestField(${guest.id}, 'status', this.value)" class="px-1 py-1 rounded-lg border text-xs font-semibold focus:outline-none bg-white">
+                            <option value="Pendiente" ${guest.status === 'Pendiente' ? 'selected' : ''}>⏳ Pendiente</option>
+                            <option value="Confirmado" ${guest.status === 'Confirmado' ? 'selected' : ''}>✔️ Confirmado</option>
+                            <option value="Cancelado" ${guest.status === 'Cancelado' ? 'selected' : ''}>❌ Cancelado</option>
+                        </select>
+                    `;
+
+                    const actionButton = isEditing
+                        ? `<button onclick="saveGuestText(${guest.id})" class="text-emerald-600 hover:text-emerald-800 p-1 rounded-lg hover:bg-emerald-50 transition-colors mr-1" title="Guardar cambios">
+                                <i data-lucide="check" class="w-4 h-4 inline"></i>
+                           </button>`
+                        : `<button onclick="toggleEditGuest(${guest.id})" class="text-boda-600 hover:text-boda-700 p-1 rounded-lg hover:bg-boda-50 transition-colors mr-1" title="Editar textos">
+                                <i data-lucide="edit-2" class="w-4 h-4 inline"></i>
+                           </button>`;
+
+                    tr.innerHTML = `
+                        <td class="py-4 px-6 font-bold text-boda-dark">${nameCell}</td>
+                        <td class="py-4 px-2 text-center">${prioritySelect}</td>
+                        <td class="py-4 px-2 text-center">${sideSelect}</td>
+                        <td class="py-4 px-2 text-center">${typeSelect}</td>
+                        <td class="py-4 px-2">${tableSelect}</td>
+                        <td class="py-4 px-4 text-xs text-gray-600">${dietCell}</td>
+                        <td class="py-4 px-2 text-center">${statusSelect}</td>
+                        <td class="py-4 px-6 text-center no-print whitespace-nowrap">
+                            ${actionButton}
+                            <button onclick="deleteGuest(${guest.id})" class="text-red-500 hover:text-red-700 p-1 rounded-lg hover:bg-red-50 transition-colors" title="Eliminar">
+                                <i data-lucide="trash-2" class="w-4 h-4 inline"></i>
+                            </button>
+                        </td>
+                    `;
+                    tableBody.appendChild(tr);
+                });
+            }
+            if (typeof lucide !== 'undefined') lucide.createIcons();
+        }
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('guest-name').value.trim();
+            const side = document.getElementById('guest-side').value;
+            const priority = document.getElementById('guest-priority').value;
+            const type = document.getElementById('guest-type').value;
+            const status = document.getElementById('guest-status').value;
+            const table = document.getElementById('guest-table').value;
+            const diet = document.getElementById('guest-diet').value.trim() || 'Normal';
+
+            guests.push({ id: Date.now(), name, side, priority, type, table, diet, status });
+            saveGuests();
+            renderTable();
+            document.getElementById('add-guest-form').reset();
+            populateFormTableSelect(); 
+        }
+
+        function toggleEditGuest(id) {
+            editingGuestId = id;
+            renderTable();
+        }
+
+        function saveGuestText(id) {
+            const newName = document.getElementById(`edit-name-${id}`).value.trim();
+            const newDiet = document.getElementById(`edit-diet-${id}`).value.trim() || 'Normal';
+
+            if (!newName) {
+                showCustomConfirm("Campo Vacío", "El nombre del invitado no puede estar en blanco.", "alert-circle", null);
+                document.getElementById('modal-confirm-btn').classList.add('hidden');
+                document.getElementById('modal-cancel-btn').innerText = "Entendido";
+                return;
+            }
+
+            guests = guests.map(g => g.id === id ? { ...g, name: newName, diet: newDiet } : g);
+            editingGuestId = null;
+            saveGuests();
+            renderTable();
+        }
+
+        function updateGuestField(id, field, value) {
+            guests = guests.map(g => g.id === id ? { ...g, [field]: value } : g);
+            saveGuests();
+            if (field === 'table' || currentFilter !== 'all') {
+                renderTable();
+            }
+        }
+
+        function deleteGuest(id) {
+            if (editingGuestId === id) editingGuestId = null;
+            guests = guests.filter(g => g.id !== id);
+            saveGuests();
+            renderTable();
+        }
+
+        function addNewTable() {
+            const input = document.getElementById('new-table-input');
+            const tableName = input.value.trim();
+            if(tableName && !tables.includes(tableName)) {
+                tables.push(tableName);
+                localStorage.setItem('wedding_tables_ivana_daniel', JSON.stringify(tables));
+                input.value = '';
+                populateFormTableSelect();
+                renderTablesDashboard();
+                renderTable();
+            }
+        }
+
+        function removeTable(tableName, event) {
+            if (event) event.stopPropagation();
+            const totalInTable = guests.filter(g => g.table === tableName).length;
+
+            if (totalInTable > 0) {
+                showCustomConfirm("Mesa Ocupada", `No puedes eliminar "${tableName}" porque tiene ${totalInTable} invitado(s). Primero cámbialos en la lista.`, "alert-circle", null);
+                document.getElementById('modal-confirm-btn').classList.add('hidden');
+                document.getElementById('modal-cancel-btn').innerText = "Entendido";
+                return;
+            }
+
+            document.getElementById('modal-confirm-btn').classList.remove('hidden');
+            document.getElementById('modal-cancel-btn').innerText = "Cancelar";
+
+            showCustomConfirm("Eliminar Mesa", `¿Quieres eliminar "${tableName}"?`, "trash-2", () => {
+                tables = tables.filter(t => t !== tableName);
+                localStorage.setItem('wedding_tables_ivana_daniel', JSON.stringify(tables));
+                if (currentFilter === 'table:' + tableName) currentFilter = 'all';
+                populateFormTableSelect();
+                renderTablesDashboard();
+                renderTable();
+            });
+        }
+
+        function renderTablesDashboard() {
+            const container = document.getElementById('tables-dashboard-container');
+            container.innerHTML = '';
+
+            tables.forEach(table => {
+                const totalInTable = guests.filter(g => g.table === table).length;
+                const div = document.createElement('div');
+                div.className = `flex justify-between items-center bg-boda-50 p-2.5 rounded-xl border border-boda-200 text-xs cursor-pointer hover:bg-boda-100/70 transition-colors ${currentFilter === 'table:' + table ? 'border-boda-600 bg-boda-100' : ''}`;
+                
+                div.onclick = () => setActiveFilter(currentFilter === 'table:' + table ? 'all' : 'table:' + table);
+                div.innerHTML = `
+                    <div class="flex items-center gap-2">
+                        <button onclick="removeTable('${table}', event)" class="text-red-400 hover:text-red-600 p-0.5 rounded-md hover:bg-red-50 transition-colors"><i data-lucide="x" class="w-3.5 h-3.5"></i></button>
+                        <span class="font-bold text-boda-dark">🍽️ ${table}</span>
+                    </div>
+                    <span class="bg-boda-600 text-white font-bold px-2 py-0.5 rounded-full">${totalInTable} asis.</span>
+                `;
+                container.appendChild(div);
+            });
+            if (typeof lucide !== 'undefined') lucide.createIcons();
+        }
+
+        function updateStats() {
+            const total = guests.length;
+            const confirmed = guests.filter(g => g.status === 'Confirmado').length;
+            const pending = guests.filter(g => g.status === 'Pendiente').length;
+            
+            document.getElementById('stat-total').innerText = total;
+            document.getElementById('stat-confirmed').innerText = confirmed;
+            document.getElementById('stat-pending').innerText = pending;
+            document.getElementById('stat-essential').innerText = guests.filter(g => g.priority === 'Imprescindible').length;
+            document.getElementById('stat-optional').innerText = guests.filter(g => g.priority === 'Opcional').length;
+            document.getElementById('stat-adults').innerText = guests.filter(g => g.type === 'Adulto').length;
+            document.getElementById('stat-kids').innerText = guests.filter(g => g.type === 'Niño').length;
+            document.getElementById('stat-side-ivana').innerText = guests.filter(g => g.side === 'Ivana').length;
+            document.getElementById('stat-side-daniel').innerText = guests.filter(g => g.side === 'Daniel').length;
+
+            document.getElementById('bar-confirmed').style.width = total > 0 ? `${(confirmed / total) * 100}%` : '0%';
+            document.getElementById('bar-pending').style.width = total > 0 ? `${(pending / total) * 100}%` : '0%';
+        }
+
+        function setActiveFilter(filter) {
+            currentFilter = filter;
+            
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.className = "filter-btn border-2 border-boda-100 text-boda-dark px-4 py-2 rounded-xl text-xs hover:bg-boda-50 transition-colors cursor-pointer";
+            });
+            
+            const activeBtn = document.getElementById(`filter-${filter}-btn`) || document.getElementById('filter-all-btn');
+            if (activeBtn) { 
+                activeBtn.className = "filter-btn bg-boda-600 text-white px-4 py-2 rounded-xl text-xs transition-all cursor-pointer shadow-xs"; 
+            }
+            
+            renderTable();
+            renderTablesDashboard();
+        }
+
+        function clearSearch() {
+            document.getElementById('search-input').value = '';
+            renderTable();
+        }
+
+        function clearAllGuests() {
+            document.getElementById('modal-confirm-btn').classList.remove('hidden');
+            showCustomConfirm("Borrar Listado", "¿Deseas eliminar todos los invitados?", "alert-triangle", () => {
+                guests = [];
+                editingGuestId = null;
+                saveGuests();
+                renderTable();
+            });
+        }
+    </script>
+</body>
+</html>
